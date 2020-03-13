@@ -3,4 +3,9 @@ set -eu
 
 cd "$GITHUB_WORKSPACE"
 
-golangci-lint "$@"
+if [ ! -z "$OUTFILE" ]; then
+    golangci-lint "$@" | tee $OUTFILE
+else
+    golangci-lint "$@"
+fi
+

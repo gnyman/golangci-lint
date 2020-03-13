@@ -1,6 +1,6 @@
 name: golangci-lint
 description: Wraps golangci-lint as a GitHub action
-author: syntaqx
+author: syntaqx, gnyman 
 branding:
   icon: shield
   color: blue
@@ -8,6 +8,8 @@ inputs:
   golangci_lint_version:
     description: golangci-lint docker release tag
     default: v1.23
+  outfile:
+      description: write output to this file
 runs:
   using: docker
   image: Dockerfile
